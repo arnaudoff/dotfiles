@@ -1,0 +1,21 @@
+
+Config {
+    font = "xft:Dejavu Sans Mono-9",
+    bgColor = "#000000",
+    fgColor = "#ffffff",
+    position = Top,
+    lowerOnStart = True,
+    commands = [
+ 		Run Battery ["-t","Battery: <left>% / <timeleft>","-L","15","-H","75","-h","#CEFFAC","-n","#FFFFCC", "-l", "#FFB6B0"] 10,
+        Run Weather "LBSF" ["-t","Sofia, Bulgaria <tempC>°C (<skyCondition>)","-L","10","-H","30","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
+        Run MultiCpu ["-t","CPU: <total0> <total1> <total2> <total3>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
+        Run Memory ["-t","RAM: <usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Network "wlp3s0" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC", "-S", "True"] 10,
+        Run Date "%a %b %_d %H:%M:%S" "date" 10,
+        Run Kbd [("us(dvorak)", "DV"), ("us", "US")],        
+        Run StdinReader
+    ],
+    sepChar = "%",
+    alignSep = "}{",
+    template = "%StdinReader% }{ %wlp3s0% %multicpu%  %memory%  %battery%  %LBSF%  %kbd%  <fc=#FFFFCC>%date%</fc>  "
+}

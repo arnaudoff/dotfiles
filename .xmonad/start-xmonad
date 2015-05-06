@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Start screensaver daemon
+xscreensaver -no-splash &
+
+# Dual screen 
+xrandr --output DVI-I-1 --auto --primary 
+xrandr --output DP-0 --auto --rotate left --left-of DVI-I-1
+
+exec xmonad
+
