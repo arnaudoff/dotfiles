@@ -1,0 +1,6 @@
+syntax enable " Turns on syntax highlighting
+set hidden " Leave hidden buffers open
+set history=100 " Save 100 commands in the buffer (8 by default)
+set number " Shows line numbers
+colorscheme xoria256 " Sets the colorscheme to xoria (colors/xoria256.vim)
+set guifont=Consolas:h13:cANSI " Sets gVim's font to Consolas, 13
