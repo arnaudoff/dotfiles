@@ -13,11 +13,15 @@ Disclaimer: This is pretty much for my own use. It will be updated (as I get to 
 `5j` - Move down 5 lines  
 `3l`- Move left 3 characters  
 `gg` - Move on top of the file  
+`5gg` - Move to line 5  
+`7G` - Move to line 7  
 
 `w` - Jump one word forward (start of next word)  
 `e` - Jump one word forward (end of next word)  
 `b` - Jump one word backwards  
 `$` - Jump to end of line  
+`0` - Jump to start of line (including whitespace)  
+`^` - Jump to start of line (first non-whitespace character)  
 
 #### Editing
 
@@ -36,3 +40,4 @@ NB: Yanks means copy.
 `cw` - Change word  
 `yw` - Yank word  
 `yy` - Yank the whole line  
+`O` - Start new line  

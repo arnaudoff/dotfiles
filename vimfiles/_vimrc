@@ -1,0 +1,29 @@
+" Pathogen-specific 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+filetype off
+filetype plugin indent on
+" General
+syntax on " Turns on syntax highlighting
+set hidden " Leave hidden buffers open
+set history=100 " Save 100 commands in the buffer (8 by default)
+set number " Shows line numbers
+set t_Co=256 " Set 256 colors
+colorscheme distinguished " Sets the colorscheme to distinguished 
+set guifont=Consolas:h13:cANSI " Sets gVim's font to Consolas, 13
+
+" 80 characters text width rule. (adds a red line)
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+" To remind me I'm in Vim.
+nnoremap <Left> :echoe "Vim please. Use h."<CR>
+nnoremap <Right> :echoe "Vim please. Use l."<CR>
+nnoremap <Up> :echoe "Vim please. Use k."<CR>
+nnoremap <Down> :echoe "Vim please. Use j."<CR>
+
+" Mappings
+inoremap {<CR> {<CR>}<C-o>O
