@@ -1,7 +1,3 @@
-" Fixes the path for _vimrc (as ~/_vimrc is sourced to ~/vimfiles/_vimrc)
-
-let $MYVIMRC='~/vimfiles/_vimrc'
-
 " Allows pathogen to be run as a bundle
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -26,6 +22,10 @@ syntax on
 
 set hidden
 
+" Always display the status line
+
+set laststatus=2
+
 " Save 100 commands in the buffer (8 by default)
 
 set history=100 
@@ -44,7 +44,7 @@ colorscheme xoria256
 
 " Sets gVim's font to Consolas, 13
 
-set guifont=Consolas:h13:cANSI 
+" set guifont=Consolas:h13:cANSI 
 
 " Enables terminal width (by default: 80).
 " For detailed explanation:
@@ -56,12 +56,12 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" To remind me I'm in Vim :)
+" To remind me.. (10x RadoRado) 
 
-nnoremap <Left> :echoe "Vim please. Use h."<CR>
-nnoremap <Right> :echoe "Vim please. Use l."<CR>
-nnoremap <Up> :echoe "Vim please. Use k."<CR>
-nnoremap <Down> :echoe "Vim please. Use j."<CR>
+nnoremap <Left> :echoe "Use h instead."<CR>
+nnoremap <Right> :echoe "Use l instead."<CR>
+nnoremap <Up> :echoe "Use k instead."<CR>
+nnoremap <Down> :echoe "Use j instead."<CR>
 
 " Adds a corresponding bracket and moves the cursor between the formed pair.
 
