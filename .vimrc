@@ -26,6 +26,10 @@ set hidden
 
 set laststatus=2
 
+" Enable powerline fonts so powerline symbols look pretty on the statusline
+
+let g:airline_powerline_fonts = 1
+
 " Save 100 commands in the buffer (8 by default)
 
 set history=100 

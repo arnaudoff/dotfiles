@@ -12,7 +12,7 @@ URxvt*secondaryScroll:true
 URxvt*saveLines:32767
 URxvt*troughColor:#000000
 URxvt*scrollColor:#222222
-URxvt*font: xft:Dejavu Sans Mono:pixelsize=12
+URxvt*font: xft:Inconsolata for Powerline:pixelsize=17
 URxvt*urgentOnBell: true
 
 # Clickable links
