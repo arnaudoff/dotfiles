@@ -16,7 +16,7 @@ filetype plugin indent on
 
 " Turns on syntax highlighting
 
-syntax on  
+syntax on
 
 " Leave hidden buffers open
 
@@ -32,11 +32,11 @@ let g:airline_powerline_fonts = 1
 
 " Save 100 commands in the buffer (8 by default)
 
-set history=100 
+set history=100
 
 " Shows line numbers
 
-set number 
+set number
 
 " Set terminal colouring to 256. (if applicable) 
 
@@ -46,9 +46,33 @@ set t_Co=256
 
 colorscheme xoria256
 
-" Sets gVim's font to Consolas, 13
+" Use indents of 4 spaces
 
-" set guifont=Consolas:h13:cANSI 
+set shiftwidth=4
+
+" An indentation every four columns
+
+set tabstop=4
+
+" Make it so backspace deletes indent
+
+set softtabstop=4
+
+" Tabs are spaces, not tabs
+
+set expandtab
+
+" Same ideas, different values - Ruby specific indent
+
+autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
+
+" Highlight whitespace (10x spf13)
+
+set list
+
+" Show whitespaces as a sexy character
+
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. 
 
 " Enables terminal width (by default: 80).
 " For detailed explanation:
@@ -60,7 +84,7 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" To remind me.. (10x RadoRado) 
+" To remind me.. (10x RadoRado)
 
 nnoremap <Left> :echoe "Use h instead."<CR>
 nnoremap <Right> :echoe "Use l instead."<CR>
