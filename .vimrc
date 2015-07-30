@@ -44,7 +44,7 @@ set t_Co=256
 
 " Set the colorscheme.
 
-colorscheme xoria256
+colorscheme ir_black
 
 " Use indents of 4 spaces
 

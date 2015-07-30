@@ -1,24 +1,44 @@
+# General
+
 URxvt*loginShell:true
 URxvt*transparent:true
-URxvt*shading:5
-URxvt*background:Black
-URxvt*foreground:White
+URxvt*shading:10
+URxvt*foreground:#FFFFFF
+URxvt*background:#000000
 URxvt*scrollBar:false
 URxvt*scrollBar_right:true
 URxvt*scrollBar_floating:false
 URxvt*scrollstyle:plain
 URxvt*secondaryScroll:true
-
+URxvt.depth: 32
 URxvt*saveLines:32767
 URxvt*troughColor:#000000
 URxvt*scrollColor:#222222
-URxvt*font: xft:Inconsolata for Powerline:pixelsize=17
+URxvt*font: xft:Meslo LG S DZ for Powerline:regular:pixelsize=15
+URxvt*boldfont: xft:Meslo LG S DZ for Powerline:bold:pixelsize=15
 URxvt*urgentOnBell: true
 
 # Clickable links
+
 URxvt*perl-ext-common: default,matcher,-option-popup,-selection-popup,-realine
 URxvt*matcher.button: 1
 URxvt*urlLauncher: google-chrome-stable
 
-URxvt.depth: 32
-URxvt.background: [45]#000000
+# Integration with ir_black
+
+URxvt.color0:   #4E4E4E
+URxvt.color1:   #FF6C60
+URxvt.color2:   #A8FF60
+URxvt.color3:   #FFFFB6
+URxvt.color4:   #96CBFE
+URxvt.color5:   #FF73FD
+URxvt.color6:   #C6C5FE
+URxvt.color7:   #EEEEEE
+URxvt.color8:   #7C7C7C
+URxvt.color9:   #FFB6B0
+URxvt.color10:  #CEFFAB
+URxvt.color11:  #FFFFCB
+URxvt.color12:  #FFFFCB
+URxvt.color13:  #FF9CFE
+URxvt.color14:  #DFDFFE
+URxvt.color15:  #FFFFFF
