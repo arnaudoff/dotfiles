@@ -30,6 +30,6 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 
 alias zshconf="vim ~/.zshrc"
-alias urxvtconf="vim ~/.Xdefault"
+alias urxvtconf="vim ~/.Xdefaults"
 alias vimconf="vim ~/.vimrc"
 alias gs="git status"
