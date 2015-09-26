@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/YouCompleteMe"]
 	path = .vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule ".scripts/z"]
+	path = .scripts/z
+	url = https://github.com/rupa/z
