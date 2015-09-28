@@ -6,9 +6,13 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 execute pathogen#infect()
 
-" Disable filetype detection
+" Disable vi compatibility
 
-filetype off
+set nocompatible
+
+" Enable filetype detection
+
+filetype on
 
 " Enables language-specific indenting rules
 
@@ -125,3 +129,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" YCM extra conf path
+
+let g:ycm_global_ycm_extra_conf = '~/.ycm_global_ycm_extra_conf.py'
