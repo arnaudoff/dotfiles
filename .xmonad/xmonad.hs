@@ -1,6 +1,8 @@
 {-
-  The original author of this config is David Brewer, with some #! mods by Jess Robertson. 
-  There are a few changes by me to suit my preferences.
+    The original author of this config is David Brewer, with some mods by
+    Jess Robertson.
+
+    There are changes made by me (arnaudoff) as I got comfortable with XMonad.
 -}
 
 import XMonad
@@ -23,17 +25,11 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import Data.Ratio ((%))
 
-{-
-  Xmonad configuration variables. These settings control some of the
-  simpler parts of xmonad's behavior and are straightforward to tweak.
--}
-
-myModMask            = mod4Mask       -- changes the mod key to "super"
-myFocusedBorderColor = "#000000"      -- color of focused border
-myNormalBorderColor  = "#000000"      -- color of inactive border
-myBorderWidth        = 1              -- width of border around windows
-myTerminal           = "urxvt" -- which terminal software to use
-
+myModMask            = mod4Mask       -- changes the mod key to "Windows"
+myFocusedBorderColor = "#080808"
+myNormalBorderColor  = "#000000"
+myBorderWidth        = 1
+myTerminal           = "urxvt"
 
 {-
   Xmobar configuration variables. These settings control the appearance
@@ -54,22 +50,7 @@ myUrgentWSRight = "}"
 
 
 {-
-  Workspace configuration. Here you can change the names of your
-  workspaces. Note that they are organized in a grid corresponding
-  to the layout of the number pad.
-
-  I would recommend sticking with relatively brief workspace names
-  because they are displayed in the xmobar status bar, where space
-  can get tight. Also, the workspace labels are referred to elsewhere
-  in the configuration file, so when you change a label you will have
-  to find places which refer to it and make a change there as well.
-
-  This central organizational concept of this configuration is that
-  the workspaces correspond to keys on the number pad, and that they
-  are organized in a grid which also matches the layout of the number pad.
-  So, I don't recommend changing the number of workspaces unless you are
-  prepared to delve into the workspace navigation keybindings section
-  as well.
+    Changing those requires changes where they are referenced.
 -}
 
 myWorkspaces =
@@ -79,19 +60,14 @@ myWorkspaces =
     "", "", ""
   ]
 
-startupWorkspace = "5:dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "5:dev"
 
 {-
-  Layout configuration. In this section we identify which xmonad
-  layouts we want to use. I have defined a list of default
-  layouts which are applied on every workspace, as well as
-  special layouts which get applied to specific workspaces.
-
-  Note that all layouts are wrapped within "avoidStruts". What this does
-  is make the layouts avoid the status bar area at the top of the screen.
-  Without this, they would overlap the bar. You can toggle this behavior
-  by hitting "super-b" (bound to ToggleStruts in the keyboard bindings
-  in the next section).
+    Note that all layouts are wrapped within "avoidStruts". What this does
+    is make the layouts avoid the status bar area at the top of the screen.
+    Without this, they would overlap the bar. You can toggle this behavior
+    by hitting "super-b" (bound to ToggleStruts in the keyboard bindings
+    in the next section).
 -}
 
 -- Define group of default layouts used on most screens, in the
@@ -102,14 +78,12 @@ startupWorkspace = "5:dev"  -- which workspace do you want to be on after launch
 -- space for the status bar at the top of the screen.
 defaultLayouts = smartBorders(avoidStruts(
   -- ResizableTall layout has a large master window on the left,
-  -- and remaining windows tile on the right. By default each area
-  -- takes up half the screen, but you can resize using "super-h" and
-  -- "super-l".
+  -- and remaining windows tile on the right.
   ResizableTall 1 (3/100) (1/2) []
 
   -- Mirrored variation of ResizableTall. In this layout, the large
   -- master window is at the top, and remaining windows tile at the
-  -- bottom of the screen. Can be resized as described above.
+  -- bottom of the screen.
   ||| Mirror (ResizableTall 1 (3/100) (1/2) [])
 
   -- Full layout makes every window full screen. When you toggle the
@@ -124,8 +98,7 @@ defaultLayouts = smartBorders(avoidStruts(
   -- ThreeColMid layout puts the large master window in the center
   -- of the screen. As configured below, by default it takes of 3/4 of
   -- the available space. Remaining windows tile to both the left and
-  -- right of the master window. You can resize using "super-h" and
-  -- "super-l".
+  -- right of the master window.
   ||| ThreeColMid 1 (3/100) (3/4)
 
   -- Circle layout places the master window in the center of the screen.
@@ -135,13 +108,7 @@ defaultLayouts = smartBorders(avoidStruts(
 
 myLayouts = defaultLayouts
 
-
 {-
-  Custom keybindings. In this section we define a list of relatively
-  straightforward keybindings. This would be the clearest place to
-  add your own keybindings, or change the keys we have defined
-  for certain functions.
-
   It can be difficult to find a good list of keycodes for use
   in xmonad. I have found this page useful -- just look
   for entries beginning with "xK":
@@ -150,8 +117,7 @@ myLayouts = defaultLayouts
 
   Note that in the example below, the last three entries refer
   to nonstandard keys which do not have names assigned by
-  xmonad. That's because they are the volume and mute keys
-  on my laptop, a Lenovo W520.
+  xmonad.
 
   If you have special keys on your keyboard which you
   want to bind to specific actions, you can use the "xev"
@@ -171,13 +137,15 @@ myKeyBindings =
     , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
     , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
 
-	-- #!-esque bindings
-	, ((myModMask, xK_s), spawn "subl3 &")
- 	, ((myModMask, xK_g), spawn "google-chrome-stable &")
-	, ((myModMask, xK_f), spawn "thunar &")
-	, ((myModMask, xK_t), spawn "urxvt &")
-	, ((myModMask .|. shiftMask, xK_l), spawn "xscreensaver-command -lock &")
-    -- , ((myModMask, xK_x), spawn "cb-exit")
+    , ((myModMask, xK_v), spawn "urxvt -e vim")
+    , ((myModMask, xK_g), spawn "google-chrome-stable &")
+    , ((myModMask, xK_w), spawn "urxvt -e sh -c 'sudo wifi-menu'")
+    , ((myModMask, xK_c), spawn "urxvt -e cmus")
+    , ((myModMask, xK_i), spawn "urxvt -e irssi")
+    , ((myModMask, xK_s), spawn "spotify &")
+    , ((myModMask, xK_t), spawn "urxvt &")
+    , ((myModMask, xK_r), spawn "urxvt -e rtorrent")
+    , ((myModMask .|. shiftMask, xK_l), spawn "xscreensaver-command -lock &")
   ]
 
 
@@ -226,16 +194,13 @@ myKeyBindings =
 
 myManagementHooks :: [ManageHook]
 myManagementHooks = [
-    className =? "rdesktop" --> doFloat
-  , (resource =? "xfce4-notifyd") --> doIgnore
-  , (className =? "Sublime Text 3") --> doF (W.shift "5:dev")
+    (title =? "rtorrent") --> doF (W.shift "6:media")
+  , (title =? "irssi") --> doF (W.shift "4:chat")
+  , (title =? "vim") --> doF (W.shift "5:dev")
+  , (resource =? "Google-chrome") --> doF (W.shift "6:media")
+  , (title =? "cmus") --> doF (W.shift "6:media")
+  , (className =? "spotify") --> doF (W.shift "6:media")
   ]
-
-{-
-    Whether focus follows mouse
-    I turn this off becuase I prefer to force myself to use the keyboard 
-    bindings rather than move to the mouse.
- -}
 
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
