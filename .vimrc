@@ -42,6 +42,10 @@ let g:airline_theme='irblack'
 
 let g:airline_powerline_fonts = 1
 
+" Enable tab line
+
+let g:airline#extensions#tabline#enabled = 1
+
 " Save 100 commands in the buffer (8 by default)
 
 set history=100
@@ -89,7 +93,11 @@ set expandtab
 
 " Same ideas, different values - Ruby specific indent
 
-autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 softtabstop=2
+
+" Open NERDTree with Ctrl + n
+
+map <C-n> :NERDTreeToggle<CR>
 
 " Highlight whitespace
 
@@ -133,3 +141,22 @@ nmap <CR> o<Esc>
 " YCM extra conf path
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_global_ycm_extra_conf.py'
+
+" Easier buffer switching
+
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
+
+" Indent guides configuration
+
+set ts=4 sw=4 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+" Remap omni completion
+imap <C-Space> <C-X><C-O>
+
+" Close tag lazy loading (10x Mir Nazim)
+autocmd FileType html,eruby let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
