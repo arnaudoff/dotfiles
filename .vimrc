@@ -36,7 +36,7 @@ set noshowmode
 
 " Set airline theme
 
-let g:airline_theme='irblack'
+let g:airline_theme='solarized'
 
 " Enable powerline fonts so powerline symbols look pretty on the statusline
 
@@ -60,11 +60,11 @@ set t_Co=256
 
 " Set the colorscheme
 
-colorscheme ir_black
+colorscheme solarized
 
 " Set initial window size
 
-set columns=80
+" set columns=80
 
 " Wrap as close to n characters as white space allows without exceeding the
 " limit
@@ -155,8 +155,18 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 " Remap omni completion
+
 imap <C-Space> <C-X><C-O>
 
 " Close tag lazy loading (10x Mir Nazim)
+
 autocmd FileType html,eruby let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+
+" Coffeescript two space indentation rule
+
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
+" HTML two space indentation
+
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
