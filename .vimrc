@@ -62,6 +62,10 @@ set t_Co=256
 
 colorscheme solarized
 
+" Set the dark solarized
+
+set background=dark
+
 " Set initial window size
 
 " set columns=80
@@ -170,3 +174,7 @@ autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 " HTML two space indentation
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
+
+" Building C++ projects
+
+map <F5> :! cd ../build && make<CR>
