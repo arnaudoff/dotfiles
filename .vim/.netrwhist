@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/ivo/code/elsys/software-engineering/software_engineering_2015/hm_count_words/B_13_Ivaylo_Arnaudov'
+let g:netrw_dirhist_2='/home/ivo/code/freelance/street-meetups'
+let g:netrw_dirhist_3='/home/ivo/code/elsys/Hacklet'
