@@ -1,3 +1,7 @@
+"" Disable vi compatibility
+
+set nocompatible
+
 " Allows pathogen to be run as a bundle
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -5,10 +9,6 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Start pathogen
 
 execute pathogen#infect()
-
-" Disable vi compatibility
-
-set nocompatible
 
 " Enable filetype detection
 
@@ -36,7 +36,7 @@ set noshowmode
 
 " Set airline theme
 
-let g:airline_theme='solarized'
+let g:airline_theme='wombat'
 
 " Enable powerline fonts so powerline symbols look pretty on the statusline
 
@@ -60,11 +60,11 @@ set t_Co=256
 
 " Set the colorscheme
 
-colorscheme solarized
+colorscheme wallaby
 
 " Set the dark solarized
 
-set background=dark
+set background=light
 
 " Set initial window size
 

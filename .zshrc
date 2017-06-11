@@ -1,10 +1,10 @@
 # Path to oh-my-zsh installation.
 
-export ZSH=/home/ivo/.oh-my-zsh
+export ZSH=/home/arnaudoff/.oh-my-zsh
 
 # Set name of the theme to load.
 
-ZSH_THEME="xxf"
+ZSH_THEME="bureau"
 
 # Use hyphen-insensitive completion.
 
@@ -21,9 +21,9 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Load oh my zsh
 
@@ -31,7 +31,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Load z <3
 
-source /home/ivo/.scripts/z/z.sh
+source /home/arnaudoff/.scripts/z/z.sh
 
 # Aliases
 
@@ -39,5 +39,3 @@ alias zshconf="vim ~/.zshrc"
 alias urxvtconf="vim ~/.Xdefaults"
 alias vimconf="vim ~/.vimrc"
 alias gs="git status"
-
-
