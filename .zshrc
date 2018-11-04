@@ -4,7 +4,7 @@ export ZSH=/home/arnaudoff/.oh-my-zsh
 
 # Set name of the theme to load.
 
-ZSH_THEME="bureau"
+ZSH_THEME="lambda"
 
 # Use hyphen-insensitive completion.
 
@@ -21,9 +21,7 @@ plugins=(git)
 
 # User configuration
 
-#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Load oh my zsh
 
@@ -39,3 +37,4 @@ alias zshconf="vim ~/.zshrc"
 alias urxvtconf="vim ~/.Xdefaults"
 alias vimconf="vim ~/.vimrc"
 alias gs="git status"
+alias gp="git push"

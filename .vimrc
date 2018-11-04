@@ -60,11 +60,11 @@ set t_Co=256
 
 " Set the colorscheme
 
-colorscheme wallaby
+colorscheme ir_black
 
 " Set the dark solarized
 
-set background=light
+set background=dark
 
 " Set initial window size
 
@@ -178,3 +178,11 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 " Building C++ projects
 
 map <F5> :! cd ../build && make<CR>
+
+" Preview markdown with Grip
+
+let vim_markdown_preview_github = 1
+
+" Preview markdown with Chrome
+
+let vim_markdown_preview_browser = 'Chromium'
